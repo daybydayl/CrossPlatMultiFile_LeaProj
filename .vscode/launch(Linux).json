@@ -1,0 +1,35 @@
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "(gdb) 启动",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/my_cmake_exe",//add_executable的my_cmake_exe名，window下会有.exe后缀，linux下一样
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",//${workspaceFolder}当前工作根目录，${fileDirname}当前文件所在路径
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "/usr/bin/gdb", //win下找路径，linux下一般/usr/bin/gdb
+            "setupCommands": [
+                {
+                    "description": "为 gdb 启用整齐打印",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "将反汇编风格设置为 Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "Build" //若用自己launch前json任务就用这个label,这里得前文件每次修改后都编译一遍
+        }
+
+    ]
+}
