@@ -8,14 +8,14 @@
             "name": "(gdb) 启动",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/build/my_cmake_exe.exe",//add_executable的my_cmake_exe名，window下会有.exe后缀，linux下一样
+            "program": "${workspaceFolder}/bin/my_cmake_exe.exe",//add_executable的my_cmake_exe名，window下会有.exe后缀，linux下一样
             "args": [],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",//${workspaceFolder}当前工作根目录，${fileDirname}当前文件所在路径
             "environment": [],
             "externalConsole": false,
             "MIMode": "gdb",
-            "miDebuggerPath": "C:\\myinstall\\VSCode\\mingw64\\bin\\gdb.exe", //win下找路径，linux下一般/usr/bin/gdb
+            "miDebuggerPath": "D:\\myinstall\\VSCode\\mingw64\\bin\\gdb.exe", //win下找路径，linux下一般/usr/bin/gdb
             "setupCommands": [
                 {
                     "description": "为 gdb 启用整齐打印",

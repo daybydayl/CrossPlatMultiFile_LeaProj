@@ -1,5 +1,5 @@
 #设置cmake支持最低版本
-cmake_minimum_required(VERSION 3.0)
+cmake_minimum_required(VERSION 3.29.0)
 
 #项目名(必选)
 project(SOLDIERSHOOT)
@@ -22,8 +22,12 @@ endif()
 #设置cmake构建的项目版本
 set(CMAKE_BUILD_TYPE Debug)
 
+#设置可执行文件存放目录
+set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
+
 #把文件设置为变量
-set(SRC main.cpp src/Gun.cpp src/Soldier.cpp)
+set(SRC_LISTS main.cpp src/Gun.cpp src/Soldier.cpp)
+#aux_source_directory(. SRC_LISTS) #旨在当前目录下的cpp文件
 
 #生成可执行文件(必选)
-add_executable(my_cmake_exe ${SRC})
+add_executable(my_cmake_exe ${SRC_LISTS})
